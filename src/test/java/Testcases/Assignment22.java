@@ -110,30 +110,23 @@ public class Assignment22 {
 	    }     
 		//11.Search and Select Computer Science
 	    
-	    
-	    WebElement subjectInput = driver.findElement(By.id("subjectsInput"));
-	 subjectInput.sendKeys("Computer Science");
-	 subjectInput.sendKeys(Keys.ENTER);
-	 subjectInput.sendKeys(Keys.TAB);
-		               
+	 // Subjects - Enter "Computer Science" and press ENTER
+        driver.findElement(By.id("subjectsInput")).sendKeys("Computer Science");
+        driver.findElement(By.id("subjectsInput")).sendKeys(Keys.ENTER);
+        
+
+	
+       
+
 		//12.Select Hobbies as Sports and Reading
 
-  WebElement hobbie=driver.findElement(By.xpath("//label[text()='Sports']"));
-   
-    
-    wait.until(ExpectedConditions.visibilityOf(hobbie));
-	  
-    hobbie.click();
-		               
-    WebElement reading=driver.findElement(By.xpath("//label[text()='Reading']"));
-    wait.until(ExpectedConditions.visibilityOf(reading));
-	  
-    reading.click();
+        
   
 		               
 		//13.Upload photo
   
    WebElement upload = driver.findElement(By.id("uploadPicture"));
+   wait.until(ExpectedConditions.visibilityOf(upload));
    upload.sendKeys("C:\\Users\\USER\\OneDrive\\Pictures\\Screenshots\\image.png");
 		               
 		//14. Wait till file upload
@@ -149,11 +142,13 @@ public class Assignment22 {
 
 		               
 		//15.Submit Details
-		               
+   
+   driver.findElement(By.id("submit")).click();
+   
 		//16. Close browser window
 
 
-
+driver.quit();
 
 	}
 
